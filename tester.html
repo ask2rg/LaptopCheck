@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser Test Toolkit — LaptopCheck</title>
+<meta name="description" content="Run real hardware tests right in your browser — screen, keyboard, trackpad, touch, webcam, mic, speakers, refresh rate, battery and a quick performance check. Results save on your device.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/tester.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quick.html">⚡ Quick</a></li>
+      <li><a href="inspection.html">1 · Inspect</a></li>
+      <li><a href="display.html">2 · Display</a></li>
+      <li><a href="input.html">3 · Input</a></li>
+      <li><a href="battery.html">4 · Battery</a></li>
+      <li><a href="storage.html">5 · Storage</a></li>
+      <li><a href="performance.html">6 · Perf.</a></li>
+      <li><a href="system.html">7 · System</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-intro">
+  <div class="container">
+    <span class="stepno">🧰 In-browser toolkit · no install</span>
+    <h1>Browser test toolkit</h1>
+    <p class="lede">Run real hardware checks right here, on the laptop you're testing — screen, keyboard, trackpad, touch, webcam, mic, speakers and more. Work through them one by one; your results save automatically on this device, even if you close the tab.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:14px;">
+  <div class="container">
+
+    <div class="callout tip reveal">
+      <span class="ico">🔒</span>
+      <p><strong>100% private:</strong> every test runs in your browser. Nothing — including camera or mic — is uploaded anywhere. Results live only in this browser's local storage. Some tests (camera, mic) will ask the browser for permission.</p>
+    </div>
+
+    <!-- CONFIG -->
+    <div class="section-head reveal" style="margin-top:10px;">
+      <h2>This device at a glance</h2>
+      <p>What the browser can detect about this machine. Quick to cross-check against the listing.</p>
+    </div>
+    <div id="config-grid" class="config-grid reveal"></div>
+    <div class="callout warn reveal" style="margin-top:14px;">
+      <span class="ico">⚠️</span>
+      <p>Browsers can only see <em>some</em> specs and can't read the true CPU model, full RAM size, disk health or battery wear. For those, use the free desktop tools in the <a href="system.html#sysinfo">System</a>, <a href="storage.html">Storage</a> and <a href="battery.html">Battery</a> stages — this toolkit is the fast convenience layer on top.</p>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary reveal">
+      <div class="summary-top">
+        <h3>🧪 Test wizard</h3>
+        <div class="summary-counts">
+          <span class="sc"><span class="dotc pass"></span><b id="sc-pass">0</b> pass</span>
+          <span class="sc"><span class="dotc fail"></span><b id="sc-fail">0</b> fail</span>
+          <span class="sc"><span class="dotc skip"></span><b id="sc-skip">0</b> skip</span>
+          <span class="sc"><span class="dotc pend"></span><b id="sc-pend">0</b> left</span>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="sum-fill"></div></div>
+      <div class="summary-actions">
+        <span class="muted" style="font-size:0.82rem;align-self:center;"><b id="sum-pct">0 / 0 done</b> · saved on this device</span>
+        <button class="btn btn-ghost" id="btn-export" style="padding:7px 14px;font-size:0.82rem;">⧉ Copy results</button>
+        <button class="btn btn-ghost" id="btn-reset" style="padding:7px 14px;font-size:0.82rem;">↺ Reset</button>
+      </div>
+    </div>
+
+    <p class="muted reveal" style="font-size:0.9rem;margin:0 0 14px;">Tap a test to open its guide and the live tool, run it, then mark <strong>Pass</strong>, <strong>Fail</strong> or <strong>Skip</strong>. Work top to bottom.</p>
+
+    <!-- TESTS (rendered by tester.js) -->
+    <div id="test-list" class="reveal"></div>
+
+    <div class="callout tip reveal" style="margin-top:18px;">
+      <span class="ico">📋</span>
+      <p>Done here? Cross these off in the full <a href="checklist.html">checklist</a>, and remember the deeper checks (battery wear, SSD health, thermals) still need the free desktop tools — see the <a href="quick.html">Quick essentials</a>.</p>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="quick.html" class="prev"><span class="dir">← Related</span><span class="ttl">⚡ Quick essentials</span></a>
+      <a href="checklist.html" class="next"><span class="dir">Next →</span><span class="ttl">Final checklist</span></a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div style="max-width:300px;">
+        <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+        <p class="muted" style="font-size:0.9rem;">A free, step-by-step guide to testing a second-hand Windows laptop before you buy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Test stages</h4>
+        <ul>
+          <li><a href="inspection.html">1 · Inspection</a></li>
+          <li><a href="display.html">2 · Display</a></li>
+          <li><a href="battery.html">4 · Battery</a></li>
+          <li><a href="storage.html">5 · Storage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="tester.html">🧪 Browser toolkit</a></li>
+          <li><a href="quick.html">⚡ Quick essentials</a></li>
+          <li><a href="checklist.html">Final checklist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Downloads</h4>
+        <ul>
+          <li><a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">CrystalDiskInfo ↗</a></li>
+          <li><a href="https://www.nirsoft.net/utils/battery_information_view.html" target="_blank" rel="noopener">BatteryInfoView ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year>2026</span> LaptopCheck. Educational guide only. All in-browser tests run locally; no data leaves your device.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+<script src="assets/tester.js"></script>
+</body>
+</html>

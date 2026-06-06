@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 7 · System, Windows &amp; Drivers — LaptopCheck</title>
+<meta name="description" content="Check Windows activation, Device Manager errors, driver health, Wi-Fi/Bluetooth and a clean-install status on a used laptop before you buy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quick.html">⚡ Quick</a></li>
+      <li><a href="inspection.html">1 · Inspect</a></li>
+      <li><a href="display.html">2 · Display</a></li>
+      <li><a href="input.html">3 · Input</a></li>
+      <li><a href="battery.html">4 · Battery</a></li>
+      <li><a href="storage.html">5 · Storage</a></li>
+      <li><a href="performance.html">6 · Perf.</a></li>
+      <li><a href="system.html">7 · System</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-intro">
+  <div class="container">
+    <span class="stepno">Stage 7 of 7 · 🟠 Important</span>
+    <h1>System, Windows &amp; drivers</h1>
+    <p class="lede">The final software layer. Confirm Windows is genuine and activated, no hardware is erroring out in Device Manager, the wireless works, and the laptop is — ideally — reset and ready for you.</p>
+    <nav class="quicknav">
+      <a href="#sysinfo">System info (msinfo32)</a>
+      <a href="#activation">Windows activation</a>
+      <a href="#devmgr">Device Manager</a>
+      <a href="#wireless">Wi-Fi &amp; Bluetooth</a>
+      <a href="#clean">Clean &amp; reset</a>
+    </nav>
+    <div class="stage-meta">
+      <span class="sm-total">⏱️ Whole stage ≈ 12 min (first time)</span>
+      <div class="sm-cols">
+        <div class="sm-col tech"><h4>🛠️ Technical checks</h4><ul>
+          <li>msinfo32 full config <b>~4 min</b></li>
+          <li>Windows activation (slmgr) <b>~1.5 min</b></li>
+          <li>Device Manager errors <b>~2 min</b></li>
+          <li>Windows Update glance <b>~1.5 min</b></li>
+        </ul></div>
+        <div class="sm-col gen"><h4>👁️ General checks</h4><ul>
+          <li>Wi-Fi / Bluetooth connect <b>~3 min</b></li>
+          <li>Accounts / BitLocker check <b>~2 min</b></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:18px;">
+  <div class="container">
+
+    <!-- featured: msinfo32 -->
+    <div class="step reveal" id="sysinfo" style="border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;">
+      <div class="step-header">
+        <div class="step-num" style="background:var(--accent);color:#fff;border-radius:10px;">ℹ︎</div>
+        <div class="step-title">
+          <h3>System Information — <code class="inline">msinfo32</code> <span class="prio p2">Verify config</span></h3>
+          <div class="sub">The master tool to confirm every spec &amp; setting in one window</div>
+          <div style="margin-top:8px;"><span class="chip tech">🛠️ Technical</span> <span class="chip time">⏱️ 45s</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Start here: Windows' built-in <strong>System Information</strong> is the single best place to verify and cross-check the whole machine against the listing. Press <code class="inline">Win</code> + <code class="inline">R</code> and run:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Run dialog (Win + R)</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="msinfo32">msinfo32</pre>
+        </div>
+        <p>On the <strong>System Summary</strong> page, confirm these against what you're being sold:</p>
+        <ul>
+          <li><strong>System Manufacturer / Model</strong> and <strong>System Type</strong> (x64-based) — the right machine.</li>
+          <li><strong>Processor</strong> — exact CPU model and clock speed.</li>
+          <li><strong>Installed Physical Memory (RAM)</strong> and <strong>Total Physical Memory</strong>.</li>
+          <li><strong>BIOS Mode = UEFI</strong> and <strong>Secure Boot State = On</strong> (a modern, healthy setup).</li>
+          <li><strong>BIOS Version/Date</strong> — a very old BIOS hints at a neglected or much older unit.</li>
+          <li><strong>OS Name / Version</strong> — the Windows edition and build you're getting.</li>
+        </ul>
+        <div class="callout deal">
+          <span class="ico">💰</span>
+          <p><strong>Find the build year / age — a big price factor:</strong> the <em>BIOS Date</em> shown here, plus the manufacture date from the warranty lookup in <a href="inspection.html#ownership">Stage 1</a>, tell you roughly how old the laptop is. Along with battery and drive health, age is one of the strongest, most objective levers for negotiating a fair price — an older build year justifies a lower offer.</p>
+        </div>
+        <p>Expand <strong>Components</strong> (Display, Storage → Drives, Network adapters) to confirm the GPU, drive and Wi-Fi card, and check <strong>Hardware Resources → Conflicts/Sharing</strong> for any flagged conflicts. Tip: <em>File → Export</em> saves a full text snapshot you can keep as a record.</p>
+        <div class="callout tip">
+          <span class="ico">💡</span>
+          <p><code class="inline">msinfo32</code> is read-only and completely safe — it changes nothing. It's the fastest way to validate the seller's claims about CPU, RAM, BIOS and Windows all at once, and it cross-checks the specs you confirmed in <a href="performance.html#specs">Stage 6</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1 -->
+    <div class="step reveal" id="activation">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">
+          <h3>Check Windows is genuine &amp; activated <span class="prio p2">Important</span></h3>
+          <div class="sub">Avoid pirated or "trial" Windows</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Go to <strong>Settings → System → Activation</strong>. It should say <em>"Windows is activated"</em>. Or check the expiry/status via:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Run dialog (Win + R)</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="slmgr /xpr">slmgr /xpr</pre>
+        </div>
+        <p>A pop-up confirms whether Windows is permanently activated. Also check the edition and version:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Run dialog (Win + R)</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="winver">winver</pre>
+        </div>
+        <div class="callout warn">
+          <span class="ico">⚠️</span>
+          <p>A watermark like <em>"Activate Windows"</em> in the corner, or "not activated", means you may need to buy a licence. On most OEM laptops the licence is baked into the firmware and reactivates automatically after a reset — but confirm before assuming.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="step reveal" id="devmgr">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">
+          <h3>Scan Device Manager for errors <span class="prio p2">Important</span></h3>
+          <div class="sub">Yellow marks = missing or broken hardware</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Open Device Manager:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Run dialog (Win + R)</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="devmgmt.msc">devmgmt.msc</pre>
+        </div>
+        <ul>
+          <li>Look for any <strong>yellow ⚠️ triangle</strong> or "Unknown device" — that hardware is missing a driver or has failed.</li>
+          <li>Confirm key items are present and error-free: <strong>Display adapters, Network adapters (Wi-Fi), Bluetooth, Sound, Disk drives, Cameras</strong>.</li>
+          <li>A missing component (e.g. no Wi-Fi adapter listed at all) can mean a faulty or removed part.</li>
+        </ul>
+        <div class="verdict good"><span class="mark">✓</span><span>No yellow marks; every expected device is listed and working.</span></div>
+        <div class="verdict bad"><span class="mark">✕</span><span>Yellow warnings or unknown devices that don't resolve after a Windows Update / driver install.</span></div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="step reveal" id="wireless">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">
+          <h3>Wi-Fi, Bluetooth &amp; networking <span class="prio p2">Important</span></h3>
+          <div class="sub">Easy to forget, annoying to fix</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <ul>
+          <li><strong>Wi-Fi:</strong> connect to a network (your phone hotspot works) and load a page — confirm a stable connection and decent signal.</li>
+          <li><strong>Bluetooth:</strong> open <em>Settings → Bluetooth &amp; devices</em> and pair something (earbuds/phone) to confirm it scans and connects.</li>
+          <li><strong>Ethernet</strong> (if there's a port): plug in a cable if one's available.</li>
+          <li><strong>Airplane mode</strong> toggles cleanly on/off.</li>
+        </ul>
+        <div class="callout tip">
+          <span class="ico">📶</span>
+          <p>Bring a <strong>phone hotspot</strong> so you're never dependent on the seller's Wi-Fi for any online checks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="step reveal" id="clean">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">
+          <h3>Clean accounts &amp; reset status <span class="prio p1">Critical</span></h3>
+          <div class="sub">So the laptop is truly yours afterward</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p><strong>Most important for ex-corporate laptops:</strong> make sure the machine isn't still tied to a company that could remotely lock or wipe it. Open <em>Settings → Accounts → Access work or school</em> — it should be <strong>empty</strong>. If an organisation account is listed, ask the seller to remove it and confirm it's gone.</p>
+        <div class="callout danger">
+          <span class="ico">🚩</span>
+          <p><strong>Walk away if</strong> it's joined to a company/school (Azure AD or domain), enrolled in MDM/Intune, or the BIOS shows <strong>Computrace/Absolute "Activated"</strong>. These can be remotely locked or wiped even after a clean Windows reinstall.</p>
+        </div>
+        <details class="more">
+          <summary>Advanced: verify management status with one command</summary>
+          <div class="more-body">
+            <p>Open <strong>Command Prompt (Admin)</strong> and run <code class="inline">dsregcmd /status</code>. In the output you want:</p>
+            <ul>
+              <li><strong>AzureAdJoined : NO</strong> and <strong>DomainJoined : NO</strong></li>
+              <li>No <strong>MDM</strong> URL listed in the Tenant / device-management section</li>
+            </ul>
+            <p>If it shows <em>AzureAdJoined: YES</em> or an MDM URL, the device is (or was) company-managed — have the seller properly release/deprovision it before you buy.</p>
+          </div>
+        </details>
+        <ul>
+          <li><strong>No leftover accounts:</strong> the laptop shouldn't be signed into the seller's Microsoft account in a way you can't remove. Ideally it's reset to a fresh "out-of-box" setup.</li>
+          <li><strong>BitLocker:</strong> if the drive is encrypted, make sure it's either decrypted or you get the recovery key — otherwise a reset can lock you out.</li>
+          <li><strong>Plan a reset:</strong> if it isn't already wiped, do <em>Settings → System → Recovery → Reset this PC → Remove everything</em> after purchase to remove their data and start clean.</li>
+          <li><strong>Windows Update:</strong> open <em>Settings → Windows Update</em> and check it can reach Microsoft and isn't stuck on errors.</li>
+        </ul>
+        <div class="callout danger">
+          <span class="ico">🚩</span>
+          <p><strong>Don't pay</strong> for a laptop you can't fully control — locked to an account, BitLocker-encrypted with no key, or unable to be reset. These can become unusable.</p>
+        </div>
+        <div class="callout tip">
+          <span class="ico">🎉</span>
+          <p>That's all 7 stages. Head to the checklist to tick everything off and read the negotiation playbook.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="performance.html" class="prev"><span class="dir">← Previous</span><span class="ttl">6 · Performance</span></a>
+      <a href="checklist.html" class="next"><span class="dir">Finish →</span><span class="ttl">Checklist &amp; price tips</span></a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div style="max-width:300px;">
+        <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+        <p class="muted" style="font-size:0.9rem;">A free, step-by-step guide to testing a second-hand Windows laptop before you buy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Test stages</h4>
+        <ul>
+          <li><a href="inspection.html">1 · Inspection</a></li>
+          <li><a href="display.html">2 · Display</a></li>
+          <li><a href="input.html">3 · Input &amp; ports</a></li>
+          <li><a href="battery.html">4 · Battery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="storage.html">5 · Storage</a></li>
+          <li><a href="performance.html">6 · Performance</a></li>
+          <li><a href="system.html">7 · System</a></li>
+          <li><a href="checklist.html">Final checklist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="index.html#tools">All tools ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year>2026</span> LaptopCheck. Educational guide only. Always download software from official sources and respect local laws when verifying a device's ownership.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 4 · Battery Health Test — LaptopCheck</title>
+<meta name="description" content="Check a used laptop's real battery health with the built-in powercfg battery report and BatteryInfoView: design vs full-charge capacity, wear level and cycle count.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quick.html">⚡ Quick</a></li>
+      <li><a href="inspection.html">1 · Inspect</a></li>
+      <li><a href="display.html">2 · Display</a></li>
+      <li><a href="input.html">3 · Input</a></li>
+      <li><a href="battery.html">4 · Battery</a></li>
+      <li><a href="storage.html">5 · Storage</a></li>
+      <li><a href="performance.html">6 · Perf.</a></li>
+      <li><a href="system.html">7 · System</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-intro">
+  <div class="container">
+    <span class="stepno">Stage 4 of 7 · 🔴 Critical</span>
+    <h1>Battery health test</h1>
+    <p class="lede">A worn battery is the most common hidden defect in used laptops — and a new one can cost a big chunk of the purchase price. Windows tells you the truth for free in about a minute.</p>
+    <nav class="quicknav">
+      <a href="#report">powercfg report</a>
+      <a href="#read">Read the report</a>
+      <a href="#biv">BatteryInfoView</a>
+      <a href="#discharge">Real-world drain</a>
+    </nav>
+    <div class="stage-meta">
+      <span class="sm-total">⏱️ Whole stage ≈ 12 min (first time)</span>
+      <div class="sm-cols">
+        <div class="sm-col tech"><h4>🛠️ Technical checks</h4><ul>
+          <li>powercfg report (run + read it) <b>~5 min</b></li>
+          <li>BatteryInfoView (cycle/wear) <b>~3 min</b></li>
+        </ul></div>
+        <div class="sm-col gen"><h4>👁️ General checks</h4><ul>
+          <li>Real-world discharge watch <b>~3 min</b></li>
+          <li>No swelling / sits flat <b>~1 min</b></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:18px;">
+  <div class="container">
+
+    <!-- 1 -->
+    <div class="step reveal" id="report">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">
+          <h3>Generate the built-in battery report <span class="prio p1">Critical</span></h3>
+          <div class="sub">No download — works on any Windows 10/11 laptop</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Open <strong>Command Prompt as Administrator</strong> (Start → type <em>cmd</em> → right-click → "Run as administrator"), then run:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Command Prompt (Admin)</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy='powercfg /batteryreport /output "C:\battery-report.html"'><span class="prompt">C:\&gt;</span> powercfg /batteryreport /output "C:\battery-report.html"</pre>
+        </div>
+        <p>It saves an HTML report to your C: drive. Open it:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Command Prompt</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy='start C:\battery-report.html'><span class="prompt">C:\&gt;</span> start C:\battery-report.html</pre>
+        </div>
+        <div class="callout tip">
+          <span class="ico">💡</span>
+          <p>Prefer not to type a path? Just run <code class="inline">powercfg /batteryreport</code> — it saves to your user folder and prints the exact location in the window.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="step reveal" id="read">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">
+          <h3>Read the two numbers that matter <span class="prio p1">Critical</span></h3>
+          <div class="sub">Design Capacity vs Full Charge Capacity</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>In the report, find the <strong>"Installed batteries"</strong> section:</p>
+        <ul>
+          <li><strong>Design Capacity</strong> — what the battery held when new (factory spec).</li>
+          <li><strong>Full Charge Capacity</strong> — what it can actually hold now.</li>
+        </ul>
+        <p>Battery health % = Full Charge ÷ Design Capacity × 100. Example: 38,000&nbsp;mWh ÷ 57,000&nbsp;mWh ≈ <strong>67% health</strong> (33% worn).</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Health remaining</th><th>Verdict</th><th>What to do</th></tr></thead>
+            <tbody>
+              <tr><td><strong>90–100%</strong></td><td>Excellent — barely used</td><td>Great sign, pay full fair price</td></tr>
+              <tr><td><strong>80–90%</strong></td><td>Good — normal wear</td><td>Perfectly fine for daily use</td></tr>
+              <tr><td><strong>65–80%</strong></td><td>Fair — noticeably aged</td><td>Usable; negotiate a discount</td></tr>
+              <tr><td><strong>Below 65%</strong></td><td>Poor — short runtime</td><td>Budget for a replacement battery</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Also scroll to <strong>"Battery capacity history"</strong> and <strong>"Battery life estimates"</strong> — these show the trend over time and the estimated runtime.</p>
+        <div class="callout deal">
+          <span class="ico">💰</span>
+          <p><strong>Negotiation lever:</strong> a battery under ~80% health is a concrete, documented reason to ask for money off. Quote the exact number (e.g. "the report shows 71% health") and the price of a replacement battery for this model — sellers find it hard to argue with their own laptop's report.</p>
+        </div>
+        <div class="callout warn">
+          <span class="ico">⚠️</span>
+          <p>On a <strong>freshly reset</strong> laptop the report may be sparse (little history). The Design vs Full Charge numbers are still accurate — those are read from the battery itself.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="step reveal" id="biv">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">
+          <h3>Confirm with BatteryInfoView <span class="prio p2">Recommended</span></h3>
+          <div class="sub">Adds cycle count &amp; wear level at a glance</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Run <strong>BatteryInfoView</strong> from your USB stick (it's portable — no install). Get it from <a href="https://www.nirsoft.net/utils/battery_information_view.html" target="_blank" rel="noopener">nirsoft.net</a>. It instantly shows:</p>
+        <ul>
+          <li><strong>Battery Wear Level</strong> — the opposite of health (e.g. 12% wear = 88% health).</li>
+          <li><strong>Cycle count</strong> — how many full charge cycles it's done. Most batteries are rated for ~300–500 cycles before dropping below 80%.</li>
+          <li>Designed vs full-charge capacity, voltage, chemistry and manufacture date.</li>
+        </ul>
+        <div class="verdict good"><span class="mark">✓</span><span>Low wear level, cycle count well under 400, manufacture date recent.</span></div>
+        <div class="verdict bad"><span class="mark">✕</span><span>High wear level, <strong>500+ cycles</strong>, or a "swollen battery" warning — factor a replacement into the price.</span></div>
+        <div class="callout danger">
+          <span class="ico">🚩</span>
+          <p><strong>Safety:</strong> if the trackpad/keyboard is bulging or the laptop won't sit flat, the battery may be <strong>swollen</strong> — a fire risk. Don't buy until it's replaced.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="step reveal" id="discharge">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">
+          <h3>Quick real-world drain check <span class="prio p2">Important</span></h3>
+          <div class="sub">Numbers are great — but watch it behave</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <ul>
+          <li><strong>Unplug the charger</strong> and use the laptop normally for a few minutes. The battery % should drop gradually and steadily.</li>
+          <li>Watch for a <strong>sudden drop</strong> (e.g. 80% → 40% in a minute) or a <strong>shutdown</strong> while there's still charge — both signal a failing cell.</li>
+          <li>Plug back in and confirm it shows <strong>"plugged in, charging"</strong> and the % climbs.</li>
+          <li>Optional live rate: in Command Prompt run <code class="inline">powercfg /batteryreport</code> again after a while to compare, or watch the discharge rate in BatteryInfoView.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="input.html" class="prev"><span class="dir">← Previous</span><span class="ttl">3 · Input &amp; ports</span></a>
+      <a href="storage.html" class="next"><span class="dir">Next →</span><span class="ttl">5 · Storage health</span></a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div style="max-width:300px;">
+        <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+        <p class="muted" style="font-size:0.9rem;">A free, step-by-step guide to testing a second-hand Windows laptop before you buy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Test stages</h4>
+        <ul>
+          <li><a href="inspection.html">1 · Inspection</a></li>
+          <li><a href="display.html">2 · Display</a></li>
+          <li><a href="input.html">3 · Input &amp; ports</a></li>
+          <li><a href="battery.html">4 · Battery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="storage.html">5 · Storage</a></li>
+          <li><a href="performance.html">6 · Performance</a></li>
+          <li><a href="system.html">7 · System</a></li>
+          <li><a href="checklist.html">Final checklist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="https://www.nirsoft.net/utils/battery_information_view.html" target="_blank" rel="noopener">BatteryInfoView ↗</a></li>
+          <li><a href="https://support.microsoft.com/en-us/windows/caring-for-your-battery-in-windows-2db3e37f-5e7d-488e-9086-ed15320519e4" target="_blank" rel="noopener">MS battery guide ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year>2026</span> LaptopCheck. Educational guide only. Always download software from official sources.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

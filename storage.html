@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 5 · Storage &amp; Drive Health — LaptopCheck</title>
+<meta name="description" content="Check the SSD/HDD health of a used laptop with CrystalDiskInfo S.M.A.R.T. data, power-on hours, and built-in Windows commands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quick.html">⚡ Quick</a></li>
+      <li><a href="inspection.html">1 · Inspect</a></li>
+      <li><a href="display.html">2 · Display</a></li>
+      <li><a href="input.html">3 · Input</a></li>
+      <li><a href="battery.html">4 · Battery</a></li>
+      <li><a href="storage.html">5 · Storage</a></li>
+      <li><a href="performance.html">6 · Perf.</a></li>
+      <li><a href="system.html">7 · System</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-intro">
+  <div class="container">
+    <span class="stepno">Stage 5 of 7 · 🔴 Critical</span>
+    <h1>Storage &amp; drive health</h1>
+    <p class="lede">A dying drive corrupts your data without warning. CrystalDiskInfo reads the drive's own self-diagnostics (S.M.A.R.T.) in seconds, so you know exactly how much life is left — and whether it's the SSD the listing promised.</p>
+    <nav class="quicknav">
+      <a href="#cdi">CrystalDiskInfo</a>
+      <a href="#read">Read the health</a>
+      <a href="#type">Drive type &amp; size</a>
+      <a href="#builtin">Built-in checks</a>
+    </nav>
+    <div class="stage-meta">
+      <span class="sm-total">⏱️ Whole stage ≈ 9 min (first time)</span>
+      <div class="sm-cols">
+        <div class="sm-col tech"><h4>🛠️ Technical checks</h4><ul>
+          <li>CrystalDiskInfo (open + read) <b>~3 min</b></li>
+          <li>Drive type / size command <b>~2 min</b></li>
+          <li>chkdsk read-only scan <b>~3 min</b></li>
+        </ul></div>
+        <div class="sm-col gen"><h4>👁️ General checks</h4><ul>
+          <li>Free space glance (This PC) <b>~1 min</b></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:18px;">
+  <div class="container">
+
+    <!-- 1 -->
+    <div class="step reveal" id="cdi">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">
+          <h3>Run CrystalDiskInfo <span class="prio p1">Critical</span></h3>
+          <div class="sub">The fastest, clearest drive-health read</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Run <strong>CrystalDiskInfo</strong> from your USB stick (a portable build needs no install). Get it from <a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">crystalmark.info</a>. It opens straight onto the drive's health.</p>
+        <div class="callout warn">
+          <span class="ico">⚠️</span>
+          <p>The official installer offers optional extras during setup — untick any bundled offers, or use the <strong>portable .zip</strong> version to avoid them entirely.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="step reveal" id="read">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">
+          <h3>Read Health Status &amp; key attributes <span class="prio p1">Critical</span></h3>
+          <div class="sub">One word at the top tells you most of it</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>The big <strong>Health Status</strong> box (top-left) is colour-coded:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Status</th><th>Meaning</th><th>Verdict</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--green);">Good (blue/green)</strong></td><td>Drive reports healthy</td><td>Proceed</td></tr>
+              <tr><td><strong style="color:var(--amber);">Caution (yellow)</strong></td><td>One or more attributes degraded</td><td>Risky — discount or pass</td></tr>
+              <tr><td><strong style="color:var(--red);">Bad (red)</strong></td><td>Drive is failing</td><td>Walk away</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Then check these specific values:</p>
+        <ul>
+          <li><strong>Health % (SSDs):</strong> remaining life. 90%+ is excellent, below ~80% means it's been worked hard.</li>
+          <li><strong>Power On Hours:</strong> total runtime. Helps gauge real age vs. the "barely used" claim — 20,000+ hours is a heavily used drive.</li>
+          <li><strong>Power On Count:</strong> how many times it's been switched on.</li>
+          <li><strong>Reallocated Sectors / Pending Sectors:</strong> should be <strong>0</strong>. Any non-zero (especially yellow) = early failure.</li>
+          <li><strong>Temperature:</strong> should be sensible (roughly 25–50&nbsp;°C idle).</li>
+        </ul>
+        <div class="verdict good"><span class="mark">✓</span><span><strong>Good</strong> status, high health %, zero reallocated sectors, reasonable power-on hours.</span></div>
+        <div class="verdict bad"><span class="mark">✕</span><span><strong>Caution/Bad</strong>, reallocated or pending sectors above 0, or health % already low.</span></div>
+        <div class="callout deal">
+          <span class="ico">💰</span>
+          <p><strong>Negotiation lever:</strong> high <em>power-on hours</em> or a low SSD health % rarely stop a sale on their own, but they're solid grounds to negotiate — they prove real age and wear no matter how clean the laptop looks. Note the figures and factor a possible new SSD into your offer.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="step reveal" id="type">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">
+          <h3>Confirm drive type, size &amp; free space <span class="prio p2">Important</span></h3>
+          <div class="sub">Make sure the listing was honest</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>CrystalDiskInfo names the exact model and interface (NVMe / SATA SSD / HDD). Cross-check the capacity in Command Prompt:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Command Prompt</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="wmic diskdrive get model,size,mediaType">&gt; wmic diskdrive get model,size,mediaType</pre>
+        </div>
+        <p>On newer Windows where <code class="inline">wmic</code> is removed, use PowerShell instead:</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">PowerShell</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="Get-PhysicalDisk | Select FriendlyName, MediaType, @{n='SizeGB';e={[math]::round($_.Size/1GB)}}, HealthStatus">&gt; Get-PhysicalDisk | Select FriendlyName, MediaType,
+  @{n='SizeGB';e={[math]::round($_.Size/1GB)}}, HealthStatus</pre>
+        </div>
+        <ul>
+          <li>Confirm it's an <strong>SSD</strong> if you were promised one (HDDs are far slower — and a common bait-and-switch).</li>
+          <li>Confirm the <strong>capacity</strong> matches the listing.</li>
+          <li>Open <em>This PC</em> to see free space and that the drive isn't almost full of someone else's data.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="step reveal" id="builtin">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">
+          <h3>Optional: built-in error scan <span class="prio p3">Nice to have</span></h3>
+          <div class="sub">Quick file-system sanity check</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>For a quick read-only scan of the system drive (a full <code class="inline">/f</code> repair takes long and may need a reboot, so skip that during a sale):</p>
+        <div class="cmd">
+          <div class="cmd-head">
+            <span class="label">Command Prompt (Admin)</span>
+            <button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy</button>
+          </div>
+          <pre data-copy="chkdsk C:">&gt; chkdsk C:</pre>
+        </div>
+        <p>It reports bad sectors and file-system errors without changing anything. You can also open <em>Optimize Drives</em> (Start → "Defragment") to see drive type and last-optimised status.</p>
+        <div class="callout tip">
+          <span class="ico">💡</span>
+          <p>Storage is one of the <em>cheapest, easiest</em> parts to upgrade later — so a small or slow drive on an otherwise great laptop is a fair haggling point, not a deal-breaker.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="battery.html" class="prev"><span class="dir">← Previous</span><span class="ttl">4 · Battery</span></a>
+      <a href="performance.html" class="next"><span class="dir">Next →</span><span class="ttl">6 · Performance</span></a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div style="max-width:300px;">
+        <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+        <p class="muted" style="font-size:0.9rem;">A free, step-by-step guide to testing a second-hand Windows laptop before you buy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Test stages</h4>
+        <ul>
+          <li><a href="inspection.html">1 · Inspection</a></li>
+          <li><a href="display.html">2 · Display</a></li>
+          <li><a href="input.html">3 · Input &amp; ports</a></li>
+          <li><a href="battery.html">4 · Battery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="storage.html">5 · Storage</a></li>
+          <li><a href="performance.html">6 · Performance</a></li>
+          <li><a href="system.html">7 · System</a></li>
+          <li><a href="checklist.html">Final checklist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">CrystalDiskInfo ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year>2026</span> LaptopCheck. Educational guide only. Always download software from official sources.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Essentials — Check a Used Laptop Fast — LaptopCheck</title>
+<meta name="description" content="The fastest realistic complete check of a second-hand Windows laptop: technical checks (commands, tools) and general checks (look &amp; feel), each timed for a first-timer, plus a deal-breaker scan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quick.html">⚡ Quick</a></li>
+      <li><a href="inspection.html">1 · Inspect</a></li>
+      <li><a href="display.html">2 · Display</a></li>
+      <li><a href="input.html">3 · Input</a></li>
+      <li><a href="battery.html">4 · Battery</a></li>
+      <li><a href="storage.html">5 · Storage</a></li>
+      <li><a href="performance.html">6 · Perf.</a></li>
+      <li><a href="system.html">7 · System</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-intro">
+  <div class="container">
+    <span class="stepno">⚡ Fast path · lowest time</span>
+    <h1>Quick essentials</h1>
+    <p class="lede">Short on time at the seller's? This is the fastest sensible way to check a whole laptop. It's split into <strong style="color:var(--accent);">Technical checks</strong> (commands, tools &amp; websites) and <strong style="color:var(--green);">General checks</strong> (look &amp; feel) — each step timed for someone doing it for the <em>first time</em>.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:10px;">
+  <div class="container">
+
+    <div class="total-bar reveal">
+      ⏱️ <span class="tb-num">≈ 25–30 min</span> first time &nbsp;·&nbsp; <span class="tb-num">~12 min</span> once you're used to it
+    </div>
+
+    <div class="callout warn reveal">
+      <span class="ico">⏳</span>
+      <p><strong>About these times:</strong> they assume you're a normal (non-techie) person doing this for the first time — reading each step, running it, and figuring out if the result is good or bad. You'll be much faster the second time. The numbers do <em>not</em> include downloading the tools (see prep below) or doing a full Windows reset.</p>
+    </div>
+
+    <div class="callout tip reveal">
+      <span class="ico">🎒</span>
+      <p><strong>One-time prep (~15 min, at home):</strong> download <a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">CrystalDiskInfo</a> and <a href="https://www.nirsoft.net/utils/battery_information_view.html" target="_blank" rel="noopener">BatteryInfoView</a> (optionally HWiNFO &amp; CPU-Z) onto a <strong>USB stick</strong> before you go. Do this once — it's not part of the on-site time. Also bring the charger and a phone hotspot.<br>
+      <strong>Smart order on the day:</strong> start the General eyeball checks <em>while the laptop boots</em>, then run the Technical ones. Keep the charger plugged in.</p>
+    </div>
+
+    <!-- DEAL-BREAKER SCAN -->
+    <div class="callout danger reveal" id="scan">
+      <span class="ico">⚡</span>
+      <p><strong>The ~3-minute deal-breaker scan</strong> (if you truly have no time). Any "no" = walk away or renegotiate hard:<br>
+      1) Battery <strong>not swollen</strong>, laptop sits flat · 2) Screen <strong>not cracked</strong>, no obvious damage · 3) Boots to a <strong>usable desktop</strong> (not locked to someone's account) · 4) BIOS / Windows <strong>not password-locked</strong> · 5) CrystalDiskInfo says <strong>"Good"</strong> · 6) Battery health <strong>above ~70%</strong> · 7) <strong>Not company-managed</strong> (Settings → Access work or school is empty).</p>
+    </div>
+
+    <!-- ===== TECHNICAL ===== -->
+    <div class="section-band tech reveal">
+      <div class="sb-icon">🛠️</div>
+      <div>
+        <h2>Technical essentials</h2>
+        <p>Commands &amp; free tools · ≈ 12 min first time</p>
+      </div>
+    </div>
+
+    <div class="quick-step tech reveal">
+      <div class="qn">1</div>
+      <div class="qbody">
+        <h4>Battery health</h4>
+        <p>Open <strong>Command Prompt (Admin)</strong>, paste the command, then open the report and compare <em>Full Charge</em> vs <em>Design Capacity</em>. You want ≳ 70%. <a href="battery.html#read">Full guide →</a></p>
+        <div class="cmd-mini"><code data-copy='powercfg /batteryreport /output "C:\battery-report.html" & start C:\battery-report.html'>powercfg /batteryreport /output "C:\battery-report.html"</code><button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+      </div>
+      <div class="qtime">⏱️ ~4 min</div>
+    </div>
+
+    <div class="quick-step tech reveal">
+      <div class="qn">2</div>
+      <div class="qbody">
+        <h4>Storage health</h4>
+        <p>Open <strong>CrystalDiskInfo</strong> from your USB stick. Health Status must say <strong>"Good"</strong>; Reallocated/Pending sectors = 0. <a href="storage.html#read">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ ~2 min</div>
+    </div>
+
+    <div class="quick-step tech reveal">
+      <div class="qn">3</div>
+      <div class="qbody">
+        <h4>Full system config — <code class="inline">msinfo32</code></h4>
+        <p>One window confirms <strong>CPU, RAM, BIOS mode (UEFI), model &amp; Windows version</strong> — your master cross-check against the listing. <a href="system.html#sysinfo">Full guide →</a></p>
+        <div class="cmd-mini"><code data-copy="msinfo32">msinfo32</code><button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+      </div>
+      <div class="qtime">⏱️ ~3 min</div>
+    </div>
+
+    <div class="quick-step tech reveal">
+      <div class="qn">4</div>
+      <div class="qbody">
+        <h4>Device Manager — no errors</h4>
+        <p>Look for any <strong>yellow ⚠️</strong> or "Unknown device". Wi-Fi, Bluetooth, sound, display &amp; camera should all be present and clean. <a href="system.html#devmgr">Full guide →</a></p>
+        <div class="cmd-mini"><code data-copy="devmgmt.msc">devmgmt.msc</code><button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+      </div>
+      <div class="qtime">⏱️ ~2 min</div>
+    </div>
+
+    <div class="quick-step tech reveal">
+      <div class="qn">5</div>
+      <div class="qbody">
+        <h4>Windows activated</h4>
+        <p>The pop-up confirms a permanent licence (or check <em>Settings → System → Activation</em>). <a href="system.html#activation">Full guide →</a></p>
+        <div class="cmd-mini"><code data-copy="slmgr /xpr">slmgr /xpr</code><button class="copy-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+      </div>
+      <div class="qtime">⏱️ ~1 min</div>
+    </div>
+
+    <div class="quick-step tech reveal">
+      <div class="qbody" style="display:flex;align-items:center;gap:12px;width:100%;flex-wrap:wrap;">
+        <span class="chip tech">Optional</span>
+        <p style="margin:0;flex:1;min-width:200px;"><strong>Thermals:</strong> open HWiNFO/HWMonitor, load the CPU a few minutes, watch temps don't peg at 100&nbsp;°C with clocks collapsing. <a href="performance.html#stress">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ +5–8 min</div>
+    </div>
+
+    <!-- ===== GENERAL ===== -->
+    <div class="section-band gen reveal">
+      <div class="sb-icon">👁️</div>
+      <div>
+        <h2>General essentials</h2>
+        <p>Look, listen &amp; feel · ≈ 14 min · do these while it boots</p>
+      </div>
+    </div>
+
+    <div class="quick-step gen reveal">
+      <div class="qn">1</div>
+      <div class="qbody">
+        <h4>Body, liquid &amp; battery swelling</h4>
+        <p>Scan for cracks, dents, corrosion in ports, and a chemical smell. Make sure the laptop <strong>sits flat</strong> (a bulge = swollen battery = walk away). <a href="inspection.html#liquid">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ ~3 min</div>
+    </div>
+
+    <div class="quick-step gen reveal">
+      <div class="qn">2</div>
+      <div class="qbody">
+        <h4>Screen — pixels &amp; cracks</h4>
+        <p>Open a <a href="https://deadpixeltest.org/" target="_blank" rel="noopener">fullscreen pixel test</a> (or a black then white image) and look for dead pixels, lines, cracks and big backlight bleed. <a href="display.html#pixels">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ ~3 min</div>
+    </div>
+
+    <div class="quick-step gen reveal">
+      <div class="qn">3</div>
+      <div class="qbody">
+        <h4>Keyboard sweep</h4>
+        <p>Open Notepad and press <strong>every key</strong> (or use an <a href="https://keyboardtester.click/" target="_blank" rel="noopener">online tester</a>) — no dead or sticky keys. <a href="input.html#keyboard">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ ~2 min</div>
+    </div>
+
+    <div class="quick-step gen reveal">
+      <div class="qn">4</div>
+      <div class="qbody">
+        <h4>Ports, trackpad &amp; A/V</h4>
+        <p>Plug your USB stick into each port; test the trackpad; quick webcam (Camera app) + speaker volume check. <a href="input.html#ports">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ ~4 min</div>
+    </div>
+
+    <div class="quick-step gen reveal">
+      <div class="qn">5</div>
+      <div class="qbody">
+        <h4>Hinge &amp; clean boot</h4>
+        <p>Lid holds any angle without wobble; the laptop boots to a <strong>usable desktop</strong> you control (no account lock). <a href="inspection.html#poweron">Full guide →</a></p>
+      </div>
+      <div class="qtime">⏱️ ~2 min</div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- MINI CHECKLIST -->
+    <div class="progress-wrap reveal">
+      <div class="progress-top">
+        <h3>⚡ Quick checklist</h3>
+        <span class="progress-stats">0 / 0 checks · 0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="progress-actions">
+        <button class="btn btn-ghost" data-check-all style="padding:7px 14px;font-size:0.82rem;">✓ Check all</button>
+        <button class="btn btn-ghost" data-reset-checklist style="padding:7px 14px;font-size:0.82rem;">↺ Reset</button>
+        <span class="timer" data-timer><span class="timer-label">⏱️ Time spent:</span> <span class="timer-display">00:00</span> <button class="link-btn" data-timer-toggle>▶ Start</button> <button class="link-btn" data-timer-reset>Reset</button></span>
+      </div>
+      <p class="fineprint" style="margin:10px 0 0;">The timer starts automatically when you tick your first item. Progress &amp; time save on this device.</p>
+    </div>
+
+    <div class="check-group reveal">
+      <h3 class="check-group-title"><span class="step-badge" style="background:var(--accent);">🛠️</span> Technical</h3>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Battery health ≳ 70%</span><span class="ci-desc">powercfg report — Full Charge vs Design</span></span></label><a class="ci-guide" href="battery.html#read">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q2"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Drive health "Good"</span><span class="ci-desc">CrystalDiskInfo — 0 reallocated sectors</span></span></label><a class="ci-guide" href="storage.html#read">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q3"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Specs match listing</span><span class="ci-desc">msinfo32 — CPU, RAM, model, BIOS mode</span></span></label><a class="ci-guide" href="system.html#sysinfo">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q4"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">No Device Manager errors</span><span class="ci-desc">devmgmt.msc — no yellow marks</span></span></label><a class="ci-guide" href="system.html#devmgr">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q5"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Windows activated</span><span class="ci-desc">slmgr /xpr</span></span></label><a class="ci-guide" href="system.html#activation">Guide ↗</a></div>
+    </div>
+
+    <div class="check-group reveal">
+      <h3 class="check-group-title"><span class="step-badge" style="background:var(--green);">👁️</span> General</h3>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q6"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">No damage / no battery swelling</span><span class="ci-desc">Sits flat; no cracks, corrosion or smell</span></span></label><a class="ci-guide" href="inspection.html#liquid">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q7"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Screen clean</span><span class="ci-desc">No dead pixels, cracks or lines</span></span></label><a class="ci-guide" href="display.html#pixels">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q8"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Keyboard &amp; trackpad work</span><span class="ci-desc">No dead/sticky keys; smooth tracking</span></span></label><a class="ci-guide" href="input.html#keyboard">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q9"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Ports &amp; A/V work</span><span class="ci-desc">USB, audio, webcam, speakers</span></span></label><a class="ci-guide" href="input.html#ports">Guide ↗</a></div>
+      <div class="check-item"><label class="ci-main"><input type="checkbox" id="q10"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="ci-text"><span class="ci-title">Hinge solid &amp; boots clean</span><span class="ci-desc">Usable desktop, no account lock</span></span></label><a class="ci-guide" href="inspection.html#poweron">Guide ↗</a></div>
+    </div>
+
+    <div class="callout tip reveal">
+      <span class="ico">🔍</span>
+      <p><strong>Something looked off?</strong> Open the matching full stage for the deep-dive — each checklist item above has a <strong>Guide ↗</strong> link. The <a href="checklist.html">full checklist</a> covers everything plus the price-negotiation playbook.</p>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="index.html" class="prev"><span class="dir">← Back</span><span class="ttl">Home &amp; overview</span></a>
+      <a href="inspection.html" class="next"><span class="dir">Full guide →</span><span class="ttl">1 · Physical inspection</span></a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div style="max-width:300px;">
+        <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+        <p class="muted" style="font-size:0.9rem;">A free, step-by-step guide to testing a second-hand Windows laptop before you buy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Fast track</h4>
+        <ul>
+          <li><a href="quick.html">⚡ Quick essentials</a></li>
+          <li><a href="quick.html#scan">Deal-breaker scan</a></li>
+          <li><a href="checklist.html">Full checklist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Stages</h4>
+        <ul>
+          <li><a href="inspection.html">1 · Inspection</a></li>
+          <li><a href="battery.html">4 · Battery</a></li>
+          <li><a href="storage.html">5 · Storage</a></li>
+          <li><a href="system.html">7 · System</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener">CrystalDiskInfo ↗</a></li>
+          <li><a href="https://www.nirsoft.net/utils/battery_information_view.html" target="_blank" rel="noopener">BatteryInfoView ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year>2026</span> LaptopCheck. Educational guide only. Always download software from official sources.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

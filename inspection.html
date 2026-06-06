@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step 1 · Physical &amp; Ownership Inspection — LaptopCheck</title>
+<meta name="description" content="Before powering on a used laptop: check for liquid/impact damage, prior repairs, hinge wear, the serial number, BIOS locks, ex-corporate locks and proof of ownership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quick.html">⚡ Quick</a></li>
+      <li><a href="inspection.html">1 · Inspect</a></li>
+      <li><a href="display.html">2 · Display</a></li>
+      <li><a href="input.html">3 · Input</a></li>
+      <li><a href="battery.html">4 · Battery</a></li>
+      <li><a href="storage.html">5 · Storage</a></li>
+      <li><a href="performance.html">6 · Perf.</a></li>
+      <li><a href="system.html">7 · System</a></li>
+      <li><a href="checklist.html">Checklist</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-intro">
+  <div class="container">
+    <span class="stepno">Stage 1 of 7 · 🔴 Mostly critical</span>
+    <h1>Physical &amp; ownership inspection</h1>
+    <p class="lede">Do this <em>before</em> the laptop is even switched on. Most expensive surprises — liquid damage, hidden repairs, stolen units, or a locked BIOS — can be caught here in a few minutes with just your eyes, your nose, and a couple of questions.</p>
+    <nav class="quicknav">
+      <a href="#ownership">Ownership &amp; locks</a>
+      <a href="#liquid">Liquid / impact damage</a>
+      <a href="#repairs">Prior repairs</a>
+      <a href="#chassis">Chassis &amp; hinge</a>
+      <a href="#poweron">First power-on</a>
+    </nav>
+    <div class="stage-meta">
+      <span class="sm-total">⏱️ Whole stage ≈ 12 min (first time)</span>
+      <div class="sm-cols">
+        <div class="sm-col tech"><h4>🛠️ Technical checks</h4><ul>
+          <li>Serial + warranty lookup (web) <b>~3 min</b></li>
+          <li>BIOS password check <b>~2 min</b></li>
+        </ul></div>
+        <div class="sm-col gen"><h4>👁️ General checks</h4><ul>
+          <li>Liquid / impact inspection <b>~3 min</b></li>
+          <li>Prior-repair clues <b>~1.5 min</b></li>
+          <li>Hinge &amp; chassis <b>~1.5 min</b></li>
+          <li>First power-on <b>~3 min</b></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:18px;">
+  <div class="container">
+
+    <!-- 1 -->
+    <div class="step reveal" id="ownership">
+      <div class="step-header">
+        <div class="step-num">1</div>
+        <div class="step-title">
+          <h3>Confirm ownership &amp; serial number <span class="prio p1">Critical</span></h3>
+          <div class="sub">Protects you from buying a stolen or locked device</div>
+          <div style="margin-top:8px;"><span class="chip gen">👁️ General</span> <span class="chip time">⏱️ ~3 min</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>A laptop that's reported stolen, or still tied to someone else's account, can be remotely locked or seized — leaving you with a paperweight. Verify the basics first.</p>
+        <ul>
+          <li><strong>Ask for the box, receipt or invoice.</strong> The serial number on the receipt should match the sticker on the laptop's underside.</li>
+          <li><strong>Find the serial / service tag</strong> on the bottom panel. On Dell it's the "Service Tag", on HP/Lenovo the "Serial Number".</li>
+          <li><strong>Check warranty &amp; original specs</strong> by typing the serial into the maker's support site — it confirms the model, age, and that the serial is real:
+            <span style="display:block;margin-top:6px;">
+              <a href="https://www.dell.com/support/home" target="_blank" rel="noopener">Dell</a> ·
+              <a href="https://support.hp.com/us-en/checkwarranty" target="_blank" rel="noopener">HP</a> ·
+              <a href="https://pcsupport.lenovo.com/us/en/warrantylookup" target="_blank" rel="noopener">Lenovo</a> ·
+              <a href="https://www.asus.com/support/warranty-status-inquiry/" target="_blank" rel="noopener">Asus</a> ·
+              <a href="https://www.acer.com/us-en/support" target="_blank" rel="noopener">Acer</a>
+            </span>
+          </li>
+          <li><strong>Meet in a safe, public place</strong> and prefer a seller who'll let you test fully. Refusal to let you run checks is itself a red flag.</li>
+        </ul>
+        <div class="callout tip">
+          <span class="ico">🔎</span>
+          <p><strong>Do 2 minutes of homework first:</strong> search the exact model + <em>"common problems"</em> or <em>"reddit"</em> before you go (e.g. known hinge cracks, thermal throttling, coil whine, or whether the RAM is soldered). Knowing a model's weak points tells you exactly what to scrutinise.</p>
+        </div>
+        <div class="callout danger">
+          <span class="ico">🚩</span>
+          <p><strong>Walk away if:</strong> the serial sticker is removed or tampered with, the seller won't show ID/receipt, the warranty lookup says the serial is invalid, or the price is suspiciously low for the model.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="step reveal">
+      <div class="step-header">
+        <div class="step-num">2</div>
+        <div class="step-title">
+          <h3>Check for a BIOS / firmware password <span class="prio p1">Critical</span></h3>
+          <div class="sub">A locked BIOS can make the laptop unusable</div>
+          <div style="margin-top:8px;"><span class="chip tech">🛠️ Technical</span> <span class="chip time">⏱️ ~2 min</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>A supervisor/BIOS password (common on ex-corporate machines) can block booting, changing settings, or reinstalling Windows — and it's often impossible to remove. Test it:</p>
+        <ul>
+          <li>Power on and immediately tap the BIOS key repeatedly: usually <code class="inline">F2</code>, <code class="inline">Del</code>, <code class="inline">F10</code>, or <code class="inline">Esc</code> (varies by brand).</li>
+          <li>You should reach the BIOS/UEFI setup screen <strong>without being asked for a password</strong>.</li>
+          <li>Check it's not an <strong>ex-corporate locked</strong> unit: no "Computrace"/"Absolute" set to <em>Activated</em>, no asset/ownership tag lock, and Secure Boot can be toggled. A Computrace-activated machine can be remotely bricked even after a fresh Windows install. (You'll also confirm company-management in <a href="system.html#clean">Stage 7</a>.)</li>
+        </ul>
+        <div class="verdict good"><span class="mark">✓</span><span>BIOS opens freely, no password prompt, settings are editable.</span></div>
+        <div class="verdict bad"><span class="mark">✕</span><span>It demands a <strong>system or supervisor password</strong> you don't have — assume the laptop is locked and walk away.</span></div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="step reveal" id="liquid">
+      <div class="step-header">
+        <div class="step-num">3</div>
+        <div class="step-title">
+          <h3>Look (and smell) for liquid &amp; impact damage <span class="prio p1">Critical</span></h3>
+          <div class="sub">The #1 cause of hidden, expensive failures</div>
+          <div style="margin-top:8px;"><span class="chip gen">👁️ General</span> <span class="chip time">⏱️ ~3 min</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Liquid damage often works for weeks, then kills the board. Corrosion is hard to fix and a deal-breaker at most prices.</p>
+        <ul>
+          <li><strong>Smell the keyboard and vents</strong> — a sweet/sour or "electrical" smell hints at spilled liquid or burnt components.</li>
+          <li><strong>Tilt the screen in good light</strong> and look for sticky residue, discoloration, or corrosion around the keys and ports.</li>
+          <li><strong>Inspect ports closely</strong> (USB, charging) for green/white corrosion or bent pins.</li>
+          <li><strong>Check corners and the lid</strong> for cracks or dents that suggest a drop.</li>
+        </ul>
+        <div class="callout warn">
+          <span class="ico">⚠️</span>
+          <p>Many laptops have internal <strong>liquid-damage indicator stickers</strong> that turn red/pink when wet. If the seller is open to it, a quick look under the bottom panel can be revealing — but never force this.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="step reveal" id="repairs">
+      <div class="step-header">
+        <div class="step-num">4</div>
+        <div class="step-title">
+          <h3>Spot signs of prior repairs <span class="prio p2">Important</span></h3>
+          <div class="sub">Not always bad — but you want to know</div>
+          <div style="margin-top:8px;"><span class="chip gen">👁️ General</span> <span class="chip time">⏱️ ~1.5 min</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Repairs aren't automatically a problem, but mismatched parts or sloppy work can mean trouble (and weaker resale).</p>
+        <ul>
+          <li><strong>Stripped or mismatched screws</strong> on the bottom panel = it's been opened.</li>
+          <li><strong>Gaps or uneven seams</strong> in the chassis suggest a panel wasn't reseated properly.</li>
+          <li><strong>A non-original screen</strong> may have different bezels, slightly off colors, or a different coating (glossy vs matte).</li>
+          <li>Ask directly: "Has anything been replaced or repaired?" — and watch the reaction.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="step reveal" id="chassis">
+      <div class="step-header">
+        <div class="step-num">5</div>
+        <div class="step-title">
+          <h3>Test the chassis, hinge &amp; lid <span class="prio p2">Important</span></h3>
+          <div class="sub">A loose hinge gets worse and is costly to fix</div>
+          <div style="margin-top:8px;"><span class="chip gen">👁️ General</span> <span class="chip time">⏱️ ~1.5 min</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <ul>
+          <li><strong>Open and close the lid slowly.</strong> It should move smoothly and stay put at any angle — no wobble, grinding, or the screen flopping back.</li>
+          <li><strong>Gently flex the chassis.</strong> Excessive creaking or a "soft" deck can mean a cracked internal frame.</li>
+          <li><strong>Press around the keyboard and palm rest</strong> — it shouldn't bend or click.</li>
+          <li><strong>Check rubber feet and the bottom panel</strong> are present and seated.</li>
+        </ul>
+        <div class="callout tip">
+          <span class="ico">💡</span>
+          <p>A slightly stiff hinge or minor scuffs are normal wear (P3 — cosmetic). A hinge that's <em>cracking the chassis</em> or lifting the bottom panel is a real problem.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="step reveal" id="poweron">
+      <div class="step-header">
+        <div class="step-num">6</div>
+        <div class="step-title">
+          <h3>First power-on &amp; boot <span class="prio p1">Critical</span></h3>
+          <div class="sub">Does it actually reach a usable desktop?</div>
+          <div style="margin-top:8px;"><span class="chip gen">👁️ General</span> <span class="chip time">⏱️ ~3 min</span></div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Now switch it on. You're checking it boots cleanly to a working Windows desktop you can control.</p>
+        <ul>
+          <li>It should power on, show the maker's logo, and reach the <strong>Windows desktop or a fresh setup screen</strong>.</li>
+          <li>Ideally Windows is <strong>already set up to the desktop</strong> (not stuck on someone's locked account). If it's stuck on a password or a Microsoft account you can't access, you can't test it — and may not be able to use it.</li>
+          <li>Listen for unusual <strong>fan noise, clicking, or beeps</strong> at boot.</li>
+          <li>Note the time to desktop — very slow boots can hint at a failing drive (you'll confirm in Stage 5).</li>
+          <li><strong>The charger:</strong> use the laptop's own charger and check it's genuine and the right wattage for the model, the brick/cable aren't discoloured or smelling of burnt plastic, and it plugs in firmly without wiggling. A wrong/weak charger can stop it charging or limit performance.</li>
+        </ul>
+        <div class="callout danger">
+          <span class="ico">🚩</span>
+          <p><strong>Deal-breaker:</strong> the laptop is locked to an account/password the seller can't unlock, won't boot, or shows disk/boot errors. Don't pay to "fix it later".</p>
+        </div>
+        <div class="callout tip">
+          <span class="ico">✅</span>
+          <p>Best case: ask the seller to do a <strong>factory reset / clean Windows reinstall</strong> beforehand (Settings → System → Recovery → Reset this PC, "Remove everything"). This wipes their accounts and confirms Windows installs cleanly. Just do your hardware tests <em>before</em> the reset if you can, since a reset takes time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-nav reveal">
+      <a href="index.html" class="prev"><span class="dir">← Back</span><span class="ttl">Home &amp; overview</span></a>
+      <a href="display.html" class="next"><span class="dir">Next →</span><span class="ttl">2 · Display &amp; screen</span></a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div style="max-width:300px;">
+        <a href="index.html" class="brand"><span class="logo">✓</span><span class="brand-text">LaptopCheck</span></a>
+        <p class="muted" style="font-size:0.9rem;">A free, step-by-step guide to testing a second-hand Windows laptop before you buy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Test stages</h4>
+        <ul>
+          <li><a href="inspection.html">1 · Inspection</a></li>
+          <li><a href="display.html">2 · Display</a></li>
+          <li><a href="input.html">3 · Input &amp; ports</a></li>
+          <li><a href="battery.html">4 · Battery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>&nbsp;</h4>
+        <ul>
+          <li><a href="storage.html">5 · Storage</a></li>
+          <li><a href="performance.html">6 · Performance</a></li>
+          <li><a href="system.html">7 · System</a></li>
+          <li><a href="checklist.html">Final checklist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fast track</h4>
+        <ul>
+          <li><a href="quick.html">⚡ Quick essentials</a></li>
+          <li><a href="quick.html#scan">Deal-breaker scan</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© <span data-year>2026</span> LaptopCheck. Educational guide only. Always download software from official sources and respect local laws when verifying a device's ownership.</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
