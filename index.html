@@ -3,12 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LaptopCheck — How to Test a Used Laptop Before You Buy (Windows)</title>
-<meta name="description" content="A free, step-by-step guide to inspecting and testing a second-hand Windows laptop before you buy. Commands, free tools, and online tests to avoid getting ripped off.">
+<title>Check a Used Laptop Before You Buy — Free Test Guide &amp; Online Toolkit | LaptopCheck</title>
+<meta name="description" content="Free step-by-step guide and in-browser toolkit to test a second-hand or refurbished laptop before you buy. Check battery health, SSD, screen, keyboard, webcam &amp; more — then negotiate a fair price.">
+<link rel="canonical" href="https://laptopcheck.pages.dev/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="keywords" content="test used laptop, check second hand laptop, refurbished laptop check online, used laptop testing software, online laptop testing, test before buy 2nd hand laptop, how to check second hand laptop battery, used laptop buying checklist">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e14" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaptopCheck">
+<meta property="og:title" content="Check a Used Laptop Before You Buy — Free Test Guide &amp; Toolkit">
+<meta property="og:description" content="Free guide + in-browser toolkit to test a second-hand or refurbished laptop: battery, SSD, screen, keyboard, webcam and more.">
+<meta property="og:url" content="https://laptopcheck.pages.dev/">
+<meta property="og:image" content="https://laptopcheck.pages.dev/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Check a Used Laptop Before You Buy — LaptopCheck">
+<meta name="twitter:description" content="Free guide + browser toolkit to test a used or refurbished laptop before buying.">
+<meta name="twitter:image" content="https://laptopcheck.pages.dev/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebSite", "@id": "https://laptopcheck.pages.dev/#website", "url": "https://laptopcheck.pages.dev/", "name": "LaptopCheck", "description": "Free guide and in-browser toolkit to test a used or refurbished laptop before buying.", "inLanguage": "en" },
+    { "@type": "Organization", "@id": "https://laptopcheck.pages.dev/#org", "name": "LaptopCheck", "url": "https://laptopcheck.pages.dev/", "logo": "https://laptopcheck.pages.dev/assets/og-image.png" },
+    { "@type": "FAQPage", "@id": "https://laptopcheck.pages.dev/#faq", "mainEntity": [
+      { "@type": "Question", "name": "How do I check a second-hand laptop before buying?", "acceptedAnswer": { "@type": "Answer", "text": "Inspect for physical or liquid damage and ownership/BIOS locks, then test the screen, keyboard, battery health, SSD/drive health, performance and thermals, and the operating system. LaptopCheck gives a free 7-stage guide plus an in-browser toolkit that runs these checks on the laptop itself." } },
+      { "@type": "Question", "name": "How can I check a used laptop's battery health?", "acceptedAnswer": { "@type": "Answer", "text": "On Windows open Command Prompt and run 'powercfg /batteryreport', then compare Full Charge Capacity to Design Capacity for the battery health percentage. BatteryInfoView also shows wear level and cycle count. Aim for 80% or higher." } },
+      { "@type": "Question", "name": "Is there free software to test a used laptop?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. CrystalDiskInfo (drive health), BatteryInfoView (battery), HWiNFO and CPU-Z (specs and sensors) are all free. LaptopCheck also includes a free online toolkit that tests the screen, keyboard, trackpad, webcam, mic and speakers right in your browser, with no install." } },
+      { "@type": "Question", "name": "How do I test a refurbished laptop online?", "acceptedAnswer": { "@type": "Answer", "text": "Open the LaptopCheck browser toolkit on the laptop and run the dead-pixel, keyboard, trackpad, webcam, microphone, speaker, network speed and battery tests. Results are saved on the device and nothing is uploaded." } },
+      { "@type": "Question", "name": "What should I check before buying a used laptop?", "acceptedAnswer": { "@type": "Answer", "text": "Ownership and BIOS/account locks, liquid or impact damage, screen defects, battery health, SSD/HDD health, RAM and thermals, ports and webcam/mic, and that Windows is genuine and resettable. Use each finding to negotiate a fair price." } }
+    ] },
+    { "@type": "HowTo", "@id": "https://laptopcheck.pages.dev/#howto", "name": "How to test a used laptop before buying", "description": "A 7-stage process to check a second-hand or refurbished Windows laptop.", "totalTime": "PT60M", "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Physical & ownership inspection", "url": "https://laptopcheck.pages.dev/inspection.html", "text": "Check for liquid/impact damage, hinge wear, the serial number, BIOS password and ex-corporate locks before powering on." },
+      { "@type": "HowToStep", "position": 2, "name": "Display & screen", "url": "https://laptopcheck.pages.dev/display.html", "text": "Test for dead/stuck pixels, backlight bleed, brightness and banding with fullscreen colour tests." },
+      { "@type": "HowToStep", "position": 3, "name": "Keyboard, trackpad, ports & A/V", "url": "https://laptopcheck.pages.dev/input.html", "text": "Test every key, the trackpad, all ports, webcam, microphone and speakers." },
+      { "@type": "HowToStep", "position": 4, "name": "Battery health", "url": "https://laptopcheck.pages.dev/battery.html", "text": "Run the powercfg battery report and BatteryInfoView to read real capacity, wear level and cycle count." },
+      { "@type": "HowToStep", "position": 5, "name": "Storage & drive health", "url": "https://laptopcheck.pages.dev/storage.html", "text": "Use CrystalDiskInfo to read S.M.A.R.T. health, drive type, remaining life and power-on hours." },
+      { "@type": "HowToStep", "position": 6, "name": "Performance, RAM & thermals", "url": "https://laptopcheck.pages.dev/performance.html", "text": "Verify specs, run a memory test and a short stress test to catch overheating and throttling." },
+      { "@type": "HowToStep", "position": 7, "name": "System, Windows & drivers", "url": "https://laptopcheck.pages.dev/system.html", "text": "Confirm Windows activation, check Device Manager and msinfo32 config, Wi-Fi/Bluetooth and that the laptop can be reset." }
+    ] }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -283,6 +324,21 @@
       <span class="ico">⚠️</span>
       <p><strong>Stay safe:</strong> only download from the official domains above. Searching a tool's name often surfaces look-alike sites bundling adware. NirSoft tools are sometimes flagged by antivirus as "hacktools" — this is a known false positive for legitimate diagnostic utilities, but only ever download them from <code class="inline">nirsoft.net</code>.</p>
     </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" style="border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Frequently asked questions</h2>
+      <p>Quick answers to the most common questions about checking a used or refurbished laptop.</p>
+    </div>
+    <details class="more reveal"><summary>How do I check a second-hand laptop before buying?</summary><div class="more-body"><p>Inspect for physical or liquid damage and ownership/BIOS locks, then test the screen, keyboard, battery health, SSD/drive health, performance and thermals, and the operating system. LaptopCheck gives a free <a href="inspection.html">7-stage guide</a> plus an <a href="tester.html">in-browser toolkit</a> that runs these checks on the laptop itself.</p></div></details>
+    <details class="more reveal"><summary>How can I check a used laptop's battery health?</summary><div class="more-body"><p>On Windows, open Command Prompt and run <code class="inline">powercfg /batteryreport</code>, then compare Full Charge Capacity to Design Capacity for the battery-health percentage. BatteryInfoView also shows wear level and cycle count. Aim for 80% or higher — see the <a href="battery.html">Battery stage</a>.</p></div></details>
+    <details class="more reveal"><summary>Is there free software to test a used laptop?</summary><div class="more-body"><p>Yes. CrystalDiskInfo (drive health), BatteryInfoView (battery), and HWiNFO / CPU-Z (specs &amp; sensors) are all free. LaptopCheck also includes a free <a href="tester.html">online toolkit</a> that tests the screen, keyboard, trackpad, webcam, mic and speakers right in your browser — no install.</p></div></details>
+    <details class="more reveal"><summary>How do I test a refurbished laptop online?</summary><div class="more-body"><p>Open the <a href="tester.html">LaptopCheck browser toolkit</a> on the laptop and run the dead-pixel, keyboard, trackpad, webcam, microphone, speaker, network-speed and battery tests. Results are saved on the device and nothing is uploaded.</p></div></details>
+    <details class="more reveal"><summary>What should I check before buying a used laptop?</summary><div class="more-body"><p>Ownership and BIOS/account locks, liquid or impact damage, screen defects, battery health, SSD/HDD health, RAM and thermals, ports and webcam/mic, and that Windows is genuine and resettable. Use each finding to negotiate a fair price — the <a href="checklist.html">checklist</a> covers it all.</p></div></details>
   </div>
 </section>
 

@@ -2,7 +2,8 @@
    LaptopCheck — shared stylesheet
    Modern, minimal, responsive. Light + dark theme.
    =========================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
+/* Fonts (Inter, JetBrains Mono, Fraunces) are loaded via <link> in each page's
+   <head> for better Core Web Vitals — no render-blocking @import here. */
 
 :root {
   --accent: #4f46e5;

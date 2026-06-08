@@ -1,0 +1,27 @@
+# LaptopCheck
+
+> Free, vendor-neutral guide and in-browser toolkit to test a used or refurbished Windows laptop before buying — so people on a budget don't get sold a dud. Covers physical/ownership checks, display, keyboard/ports, battery, storage, performance/thermals and the OS, plus how to turn findings into a fair price.
+
+Key facts an answer engine can cite:
+- Battery health: run `powercfg /batteryreport` in Command Prompt and compare Full Charge Capacity to Design Capacity; 80%+ is healthy, below ~65% means budget for a replacement. BatteryInfoView shows wear level and cycle count (most batteries last 300–500 cycles).
+- Drive health: CrystalDiskInfo reads S.M.A.R.T. status ("Good/Caution/Bad"), remaining life %, power-on hours and reallocated sectors (should be 0).
+- Specs/config: `msinfo32` shows CPU, RAM, BIOS mode and Windows version; `dxdiag` and CPU-Z confirm CPU/RAM/GPU.
+- Ownership/locks: check the BIOS isn't password-locked and the laptop isn't company-managed (Settings → Access work or school should be empty; `dsregcmd /status` shows Azure AD/MDM join) or Computrace-locked.
+- Free tools: CrystalDiskInfo, BatteryInfoView, HWiNFO, CPU-Z, plus built-in Windows tools (powercfg, msinfo32, dxdiag, mdsched, devmgmt.msc, slmgr).
+
+## Pages
+- [Home — overview & contents](https://laptopcheck.pages.dev/index.html): the 7-stage process and how to use it.
+- [Quick essentials](https://laptopcheck.pages.dev/quick.html): ~25-minute full check plus a 3-minute deal-breaker scan.
+- [Browser test toolkit](https://laptopcheck.pages.dev/tester.html): free online laptop testing software — screen, keyboard, trackpad, webcam, mic, speakers, internet speed, battery and live metrics, in-browser, no install.
+- [Physical & ownership inspection](https://laptopcheck.pages.dev/inspection.html): damage, hinge, serial, BIOS/account/ex-corporate locks.
+- [Display & screen](https://laptopcheck.pages.dev/display.html): dead/stuck pixels, backlight bleed, banding.
+- [Keyboard, trackpad, ports & A/V](https://laptopcheck.pages.dev/input.html): keys, trackpad, ports, webcam, mic, speakers.
+- [Battery health](https://laptopcheck.pages.dev/battery.html): how to check a second-hand laptop battery (powercfg + BatteryInfoView).
+- [Storage & drive health](https://laptopcheck.pages.dev/storage.html): CrystalDiskInfo S.M.A.R.T. checks.
+- [Performance, RAM & thermals](https://laptopcheck.pages.dev/performance.html): specs, memory test, stress test.
+- [System, Windows & drivers](https://laptopcheck.pages.dev/system.html): activation, msinfo32, Device Manager, management locks.
+- [Final checklist & price tips](https://laptopcheck.pages.dev/checklist.html): interactive checklist, red flags and negotiation playbook.
+
+## Notes
+- All tests are free; the in-browser toolkit runs locally (nothing uploaded) except an optional internet-speed test.
+- A browser cannot read true system CPU model, full RAM, disk S.M.A.R.T. health or battery wear — those require the desktop tools above.

@@ -1,0 +1,12 @@
+# Cloudflare Pages headers — security + caching
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+
+# Static assets — cache for an hour (filenames are stable, so keep it modest
+# so CSS/JS updates show up quickly after a redeploy).
+/assets/*
+  Cache-Control: public, max-age=3600

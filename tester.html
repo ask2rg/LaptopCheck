@@ -3,13 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Browser Test Toolkit — LaptopCheck</title>
-<meta name="description" content="Run real hardware tests right in your browser — screen, keyboard, trackpad, touch, webcam, mic, speakers, refresh rate, battery and a quick performance check. Results save on your device.">
+<title>Online Laptop Testing Toolkit — Test a Used Laptop in Your Browser | LaptopCheck</title>
+<meta name="description" content="Free online laptop testing software: test a used or refurbished laptop's screen, keyboard, trackpad, webcam, mic, speakers, battery and network speed in your browser. No install — results saved on your device.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/tester.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://laptopcheck.pages.dev/tester.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="keywords" content="online laptop testing, used laptop testing software, laptop test online, browser hardware test, dead pixel test online, keyboard test online, webcam mic test online">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e14" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LaptopCheck">
+<meta property="og:title" content="Online Laptop Testing Toolkit — test hardware in your browser">
+<meta property="og:description" content="Free in-browser tests for screen, keyboard, trackpad, webcam, mic, speakers, battery and network speed. No install.">
+<meta property="og:url" content="https://laptopcheck.pages.dev/tester.html">
+<meta property="og:image" content="https://laptopcheck.pages.dev/assets/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online Laptop Testing Toolkit — LaptopCheck">
+<meta name="twitter:description" content="Free in-browser laptop hardware tests. No install.">
+<meta name="twitter:image" content="https://laptopcheck.pages.dev/assets/og-image.png">
+<link rel="stylesheet" href="assets/style.css?v=6">
+<link rel="stylesheet" href="assets/tester.css?v=6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "LaptopCheck Browser Test Toolkit",
+  "url": "https://laptopcheck.pages.dev/tester.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires a modern web browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free online toolkit to test a used or refurbished laptop's hardware in the browser: screen/dead-pixel, keyboard, trackpad, touch, webcam, microphone, speakers, internet speed, battery and live metrics. No install; results stay on your device.",
+  "featureList": ["Dead pixel & screen test", "Keyboard test", "Trackpad / mouse test", "Touchscreen test", "Webcam test", "Microphone test", "Speaker test", "Internet speed test", "Battery status", "Live memory / CPU / FPS metrics"]
+}
+</script>
 </head>
 <body>
 
@@ -54,7 +84,7 @@
 
     <div class="callout tip reveal">
       <span class="ico">🔒</span>
-      <p><strong>100% private:</strong> every test runs in your browser. Nothing — including camera or mic — is uploaded anywhere. Results live only in this browser's local storage. Some tests (camera, mic) will ask the browser for permission.</p>
+      <p><strong>Private by default:</strong> every test runs in your browser. Nothing — including camera or mic — is uploaded. Results live only in this browser's local storage. Camera/mic ask the browser for permission. The one exception is the optional <strong>Internet-speed test</strong>, which downloads test data from Cloudflare's public endpoint to measure your connection.</p>
     </div>
 
     <!-- CONFIG -->
@@ -66,6 +96,17 @@
     <div class="callout warn reveal" style="margin-top:14px;">
       <span class="ico">⚠️</span>
       <p>Browsers can only see <em>some</em> specs and can't read the true CPU model, full RAM size, disk health or battery wear. For those, use the free desktop tools in the <a href="system.html#sysinfo">System</a>, <a href="storage.html">Storage</a> and <a href="battery.html">Battery</a> stages — this toolkit is the fast convenience layer on top.</p>
+    </div>
+
+    <!-- LIVE METRICS -->
+    <div class="section-head reveal" style="margin-top:10px;">
+      <h2>Live metrics</h2>
+      <p>Updating in real time while this page is open.</p>
+    </div>
+    <div id="live-grid" class="live-grid reveal"></div>
+    <div class="callout warn reveal" style="margin-top:14px;">
+      <span class="ico">ℹ️</span>
+      <p><strong>Honest note:</strong> browsers can't read true system CPU or RAM. <em>Memory</em> shows this tab's JavaScript heap (Chrome/Edge only); <em>CPU load</em> is estimated from CPU contention. For real, accurate usage open <strong>Task Manager</strong> (Ctrl + Shift + Esc → Performance) — see the <a href="performance.html">Performance stage</a>.</p>
     </div>
 
     <!-- SUMMARY -->
@@ -142,7 +183,7 @@
   </div>
 </footer>
 
-<script src="assets/script.js"></script>
-<script src="assets/tester.js"></script>
+<script src="assets/script.js?v=6"></script>
+<script src="assets/tester.js?v=6"></script>
 </body>
 </html>

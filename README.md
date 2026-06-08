@@ -20,23 +20,25 @@ A free, no-nonsense guide **and in-browser toolkit** for checking a second-hand 
 
 ## 🧪 The in-browser Test Toolkit (`tester.html`)
 
-Runs entirely in your browser — nothing is uploaded, including camera/mic streams.
+Runs in your browser — nothing is uploaded (including camera/mic streams). The only network request is the optional Internet-speed test.
 
 | Test | What it checks | Browser API |
 |------|----------------|-------------|
-| Display | Dead/stuck pixels, backlight bleed, uniformity (fullscreen colour cycle) | Fullscreen API |
-| Keyboard | Every key registers; sticky-key hints | `keydown`/`keyup` |
-| Mouse / trackpad | Left/right/middle/double click, scroll, tracking | pointer/mouse events |
-| Touchscreen | Draw to find dead zones; multi-touch count | Pointer/Touch events |
+| Display | Dead/stuck pixels, backlight bleed, uniformity + grayscale/colour gradient banding | Fullscreen API |
+| Keyboard | Every key registers; sticky-key hints; max simultaneous keys (rollover) | `keydown`/`keyup` |
+| Mouse / trackpad | Click types, scroll, pinch-zoom, live X/Y + crosshair, tracking | pointer/mouse events |
+| Touchscreen | Draw to find dead zones; multi-touch count; live X/Y | Pointer/Touch events |
 | Webcam | Live preview | `getUserMedia` |
-| Microphone | Live input level meter | Web Audio `AnalyserNode` |
+| Microphone | Live input level meter + record-and-play-back | Web Audio + `MediaRecorder` |
 | Speakers | Left / right / both test tones | Web Audio `StereoPannerNode` |
-| Refresh rate | Measured FPS / Hz | `requestAnimationFrame` |
+| Internet speed | Download throughput + ping | `fetch` (Cloudflare endpoint)† |
 | Battery | Charge level & charging state | Battery Status API* |
+| Live metrics | Real-time JS-heap memory, estimated CPU load, FPS, network, battery | `performance.memory`, rAF |
 | Performance | Rough single-thread CPU indicator | `performance.now()` |
 | Config panel | Cores, memory bucket, GPU, screen, DPR, touch, network | `navigator.*`, WebGL |
 
-\* Battery level is supported mainly in Chromium browsers; **battery wear/health cannot be read from a browser** — use the `powercfg` report described in the Battery stage for that.
+\* Battery level is supported mainly in Chromium browsers; **battery wear/health cannot be read from a browser** — use the `powercfg` report described in the Battery stage for that.<br>
+† The Internet-speed test is the only test that makes a network request (to Cloudflare's public `speed.cloudflare.com` endpoint).
 
 > ⚠️ **Honest scope:** the browser can only see *some* specs and can't read the true CPU model, full RAM size, disk S.M.A.R.T. health or battery wear. The toolkit is the fast convenience layer; the desktop tools below are the authoritative deep checks.
 
@@ -93,6 +95,32 @@ Any static host works:
 
 - **GitHub Pages** — push the repo, enable Pages on the `main` branch (root).
 - **Netlify / Vercel / Cloudflare Pages** — drag-and-drop the folder, or connect the repo (no build command, output dir = root).
+
+## 🔎 SEO &amp; GEO
+
+This site ships search- and AI-answer-engine–ready:
+
+- **Per-page** keyword-optimized titles, meta descriptions, canonical URLs, Open Graph + Twitter Cards, and `theme-color`.
+- **Structured data (JSON-LD):** `WebSite`, `Organization`, `FAQPage` and `HowTo` on the home page, `WebApplication` on the toolkit, and `HowTo` + `FAQPage` on the battery page.
+- **`sitemap.xml`** and **`robots.txt`** (explicitly allows AI crawlers — GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended), plus **`llms.txt`** for generative engines.
+- **Core Web Vitals:** no render-blocking `@import` (fonts load via one `<link>` with `display=swap` + preconnect), scripts deferred at body end, no layout-shifting images, text-based LCP.
+- **Social preview** at `assets/og-image.png` (1200×630).
+- A visible **FAQ** on the home page backs the `FAQPage` schema.
+
+### Domain
+
+All canonical / Open Graph / sitemap URLs are set to **`https://laptopcheck.pages.dev`** (the live Cloudflare Pages site). If you add a **custom domain** later, swap it in one pass and add a redirect:
+
+```bash
+# GNU sed (Linux); on macOS use  sed -i ''
+grep -rl "laptopcheck.pages.dev" . | xargs sed -i 's#https://laptopcheck.pages.dev#https://YOUR-DOMAIN.com#g'
+```
+
+Then in Cloudflare Pages → **Custom domains**, add the domain, and add a redirect from `*.pages.dev` to it (to avoid duplicate content). After any change, submit `sitemap.xml` in **Google Search Console** and **Bing Webmaster Tools**, and validate with Google's [Rich Results Test](https://search.google.com/test/rich-results) and [PageSpeed Insights](https://pagespeed.web.dev/).
+
+### Cloudflare Pages deployment
+
+This repo includes a **`_headers`** file (security headers + asset caching). Deploy by connecting the repo in the Cloudflare dashboard, or drag-and-drop the folder. **After any update you must redeploy** for changes to go live.
 
 ## 💬 Wiring up the feedback form (optional)
 

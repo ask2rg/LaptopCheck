@@ -1,0 +1,18 @@
+# robots.txt for LaptopCheck — live at laptopcheck.pages.dev
+# If you add a custom domain, update the Sitemap URL at the bottom.
+User-agent: *
+Allow: /
+
+# Allow major AI / answer-engine crawlers (GEO)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://laptopcheck.pages.dev/sitemap.xml
