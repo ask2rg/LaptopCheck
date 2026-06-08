@@ -1,0 +1,13 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+
+# Local/stray files that should not be deployed
+New Text Document.txt
+*.zip
+
+# Node (if you ever add tooling)
+node_modules/
